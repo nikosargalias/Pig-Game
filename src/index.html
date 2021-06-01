@@ -1,12 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
-    
-</body>
+  </head>
+  <body>
+    <main>
+      <div class="container">
+        <div class="game">
+          <div id="player-1-bg" class="game__player-1-bg game--active"></div>
+          <div id="player-2-bg" class="game__player-2-bg"></div>
+
+          <div class="game__player-1 player">
+            <h2 class="player__heading">Player 1</h2>
+            <p class="player__score" id="player-1__score">0</p>
+          </div>
+
+          <div class="game__player-2 player player--2">
+            <h2 class="player__heading">Player 2</h2>
+            <p class="player__score" id="player-2__score">0</p>
+          </div>
+
+          <div class="game__player-1-accumulated accumulated">
+            <h3 class="accumulated__current">Current</h3>
+            <p id="player-1-accumulated" class="accumulated__score">0</p>
+          </div>
+
+          <div class="game__player-2-accumulated accumulated">
+            <h3 class="accumulated__current">Current</h3>
+            <p id="player-2-accumulated" class="accumulated__score">0</p>
+          </div>
+
+          <img src="./assets/imgs/dice-1.png" alt="" class="game__dice" />
+          <img src="./assets/imgs/dice-2.png" alt="" class="game__dice" />
+          <img src="./assets/imgs/dice-3.png" alt="" class="game__dice" />
+          <img src="./assets/imgs/dice-4.png" alt="" class="game__dice" />
+          <img src="./assets/imgs/dice-5.png" alt="" class="game__dice" />
+          <img src="./assets/imgs/dice-6.png" alt="" class="game__dice" />
+          <button id="new-game" class="btn game__btn--new">🔄 New game</button>
+
+          <!-- <div class="game__btn--group"> -->
+          <button id="roll-dice" class="btn game__btn--roll">
+            🎲 Roll dice
+          </button>
+          <button id="hold" class="btn game__btn--hold">📥 Hold</button>
+          <!-- </div> -->
+        </div>
+      </div>
+    </main>
+  </body>
 </html>
