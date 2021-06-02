@@ -33,10 +33,12 @@ function addEventListeners() {
 }
 
 function newGameCB() {
+  const activePlayer = getActivePlayer();
   addEventListeners();
   resetAll();
-  resetActiveBg();
+  resetActiveBg(activePlayer);
   setActivePlayer(0);
+  toggleDiceImg(1);
 }
 
 function holdCB() {
@@ -69,7 +71,7 @@ function switchActivePlayer(activePlayer) {
 }
 
 function hasWon(player) {
-  if (Number(players[player].totalScore.textContent) >= 10) {
+  if (Number(players[player].totalScore.textContent) >= 100) {
     return true;
   }
   return false;

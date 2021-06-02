@@ -35,9 +35,7 @@ function switchActiveColors() {
 }
 
 function resetActiveBg(player) {
-  players.forEach((player) => {
-    player.bg.classList.remove("game--winner");
-  });
+  players[player].bg.classList.remove("game--winner");
   players[0].bg.classList.add("game--active");
   players[1].bg.classList.remove("game--active");
 }
