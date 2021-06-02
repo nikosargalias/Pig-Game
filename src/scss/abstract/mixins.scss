@@ -1,5 +1,12 @@
-@mixin media($device) {
-  @media (max-width: map-get($breakpoint, $device)) {
-    @content;
+@mixin media($device, $height: 0) {
+  @if $height != 0 {
+    @media (max-width: map-get($breakpoint, $device)),
+      (max-height: map-get($breakpoint, $height)) {
+      @content;
+    }
+  } @else {
+    @media (max-width: map-get($breakpoint, $device)) {
+      @content;
+    }
   }
 }

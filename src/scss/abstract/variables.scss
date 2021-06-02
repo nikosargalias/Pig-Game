@@ -3,12 +3,13 @@
 $breakpoint: (
   "mobile": 660px,
   "mobile-landscape": 900px,
+  "height-small": 640px,
 );
 
 :root {
   --gutter-elem: 3rem;
 
-  @include media(mobile-landscape) {
+  @include media(mobile-landscape, height-small) {
     --gutter-elem: 1.5rem;
   }
 }

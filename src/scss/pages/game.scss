@@ -1,8 +1,8 @@
 .game {
-  padding: 4rem 0;
+  padding: 2rem 0;
   margin: auto;
   width: 1200px;
-  max-width: 93%;
+  max-width: 95%;
 
   display: grid;
   grid-template-columns:
@@ -88,7 +88,7 @@
     grid-row: 4 / span 2;
   }
 
-  @include media(mobile-landscape) {
+  @include media(mobile-landscape, height-small) {
     max-width: 95%;
     padding: 2rem 0;
     grid-template-rows: 0.2fr repeat(4, minmax(max-content, 0.6fr)) 0.2fr;

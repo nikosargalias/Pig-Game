@@ -1,19 +1,13 @@
 .container {
   display: flex;
-  flex-direction: column;
-  background-image: linear-gradient(to bottom right, #d74bf3 0%, #2e30bf 100%);
   border: 40px rgb(32, 32, 32) solid;
   border-radius: 100px;
-  height: 100vh;
+  height: 100%;
+  width: 100%;
   overflow-y: scroll;
 
-  @include media(mobile-landscape) {
-    border: 10px rgb(32, 32, 32) solid;
-    border-radius: 40px;
-  }
-
-  @include media(mobile) {
-    border: 15px rgb(32, 32, 32) solid;
-    border-radius: 50px;
+  @include media(mobile-landscape, height-small) {
+    border: none;
+    border-radius: 0;
   }
 }
