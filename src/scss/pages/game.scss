@@ -70,6 +70,10 @@
     background: #f7f7f7d2;
   }
 
+  &--winner {
+    background: rgba(139, 245, 139, 0.856);
+  }
+
   &__player-1 {
     grid-column: player-1;
     grid-row: 2 / span 2;

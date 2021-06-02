@@ -4,10 +4,10 @@ function getActivePlayer() {
   return _activePlayer.get("activePlayer");
 }
 
-function setActivePLayer(num) {
+function setActivePlayer(num) {
   _activePlayer.set("activePlayer", num);
 }
 
-setActivePLayer(0);
+setActivePlayer(0);
 
-export { getActivePlayer, setActivePLayer };
+export { getActivePlayer, setActivePlayer };

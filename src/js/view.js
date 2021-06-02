@@ -13,9 +13,9 @@ function toggleDiceImg(roll) {
   diceImgs[roll - 1].classList.add("game__dice--active");
 }
 
-function updateTotalScore(player, num) {
+function updateTotalScore(player, accScore) {
   players[player].accScore.textContent =
-    Number(players[player].accScore.textContent) + num;
+    Number(players[player].accScore.textContent) + accScore;
 }
 
 function resetAccScore(player) {
@@ -34,7 +34,10 @@ function switchActiveColors() {
   players[1].bg.classList.toggle("game--active");
 }
 
-function resetActiveBg() {
+function resetActiveBg(player) {
+  players.forEach((player) => {
+    player.bg.classList.remove("game--winner");
+  });
   players[0].bg.classList.add("game--active");
   players[1].bg.classList.remove("game--active");
 }
@@ -49,6 +52,7 @@ function resetAll() {
 
 function renderWinner(player) {
   players[player].heading.textContent = `You Win!`;
+  players[player].bg.classList.add("game--winner");
 }
 
 export {

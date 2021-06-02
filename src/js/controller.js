@@ -1,4 +1,4 @@
-import { getActivePlayer, setActivePLayer } from "./activePlayer";
+import { getActivePlayer, setActivePlayer } from "./activePlayer";
 import {
   toggleDiceImg,
   updateTotalScore,
@@ -36,7 +36,7 @@ function newGameCB() {
   addEventListeners();
   resetAll();
   resetActiveBg();
-  setActivePLayer(0);
+  setActivePlayer(0);
 }
 
 function holdCB() {
@@ -65,11 +65,11 @@ function rollDiceCB() {
 }
 
 function switchActivePlayer(activePlayer) {
-  activePlayer === 0 ? setActivePLayer(1) : setActivePLayer(0);
+  activePlayer === 0 ? setActivePlayer(1) : setActivePlayer(0);
 }
 
 function hasWon(player) {
-  if (Number(players[player].totalScore.textContent) >= 100) {
+  if (Number(players[player].totalScore.textContent) >= 10) {
     return true;
   }
   return false;
