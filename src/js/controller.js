@@ -38,7 +38,7 @@ function newGameCB() {
   resetAll();
   resetActiveBg(activePlayer);
   setActivePlayer(0);
-  toggleDiceImg(1);
+  toggleDiceImg();
 }
 
 function holdCB() {

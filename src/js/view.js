@@ -10,7 +10,9 @@ function toggleDiceImg(roll) {
       img.classList.remove("game__dice--active");
     }
   });
-  diceImgs[roll - 1].classList.add("game__dice--active");
+  if (roll) {
+    diceImgs[roll - 1].classList.add("game__dice--active");
+  }
 }
 
 function updateTotalScore(player, accScore) {
