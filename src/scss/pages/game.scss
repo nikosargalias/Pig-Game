@@ -91,10 +91,15 @@
   @include media(mobile-landscape) {
     max-width: 95%;
     padding: 2rem 0;
-    grid-template-rows: 0.6fr repeat(4, minmax(max-content, 0.6fr)) 0.2fr;
+    grid-template-rows: 0.2fr repeat(4, minmax(max-content, 0.6fr)) 0.2fr;
 
-    &__dice {
-      margin: 2rem;
+    &__btn--new {
+      align-self: center;
+      margin: 1rem 2rem;
+    }
+
+    &__btn--roll {
+      margin: 1rem 2rem;
     }
   }
 
