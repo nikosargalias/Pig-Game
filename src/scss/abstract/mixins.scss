@@ -1,0 +1,5 @@
+@mixin media($device) {
+  @media (max-width: map-get($breakpoint, $device)) {
+    @content;
+  }
+}

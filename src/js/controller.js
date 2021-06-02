@@ -69,7 +69,7 @@ function switchActivePlayer(activePlayer) {
 }
 
 function hasWon(player) {
-  if (Number(players[player].totalScore.textContent) >= 10) {
+  if (Number(players[player].totalScore.textContent) >= 100) {
     return true;
   }
   return false;

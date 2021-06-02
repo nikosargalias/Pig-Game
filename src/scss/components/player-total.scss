@@ -1,0 +1,22 @@
+.player {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  &__score {
+    font-size: 8rem;
+    color: rgba(187, 10, 99, 0.815);
+    margin-top: 2rem;
+  }
+
+  @include media(mobile) {
+    &--2 {
+      .player__score {
+        order: -1;
+        margin: 0;
+        margin-bottom: 2rem;
+      }
+    }
+  }
+}

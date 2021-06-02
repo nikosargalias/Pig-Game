@@ -7,7 +7,13 @@
   height: 100vh;
   overflow-y: scroll;
 
-  @media (max-width: 1000px) {
+  @include media(mobile-landscape) {
     border: 10px rgb(32, 32, 32) solid;
+    border-radius: 40px;
+  }
+
+  @include media(mobile) {
+    border: 15px rgb(32, 32, 32) solid;
+    border-radius: 50px;
   }
 }

@@ -1,3 +1,9 @@
+@import "./abstract/variables.scss";
+@import "./abstract/mixins.scss";
 @import "./base/base.scss";
-@import "./layout/center.scss";
+@import "./base/typography.scss";
+@import "./components/accumulated-box.scss";
+@import "./components/btn.scss";
+@import "./components/player-total.scss";
+@import "./layout/container.scss";
 @import "pages/game";

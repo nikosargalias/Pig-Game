@@ -1,0 +1,14 @@
+@import "./mixins.scss";
+
+$breakpoint: (
+  "mobile": 660px,
+  "mobile-landscape": 900px,
+);
+
+:root {
+  --gutter-elem: 3rem;
+
+  @include media(mobile-landscape) {
+    --gutter-elem: 1.5rem;
+  }
+}

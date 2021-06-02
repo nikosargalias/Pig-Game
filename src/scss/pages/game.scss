@@ -1,24 +1,24 @@
 .game {
+  padding: 4rem 0;
   margin: auto;
   width: 1200px;
-  max-width: 90vw;
-  min-height: 600px;
+  max-width: 93%;
 
   display: grid;
   grid-template-columns:
     [player-1-start] 1fr [btn-start] minmax(max-content, 0.3fr)
     [player-1-end player-2-start] minmax(max-content, 0.3fr)
     [btn-end] 1fr [player-2-end];
-  grid-template-rows: 0.2fr repeat(4, minmax(max-content, 1fr)) 0.2fr;
+  grid-template-rows: 0.6fr repeat(4, minmax(max-content, 1fr)) 0.2fr;
 
   justify-items: center;
   align-items: center;
-  padding: 5rem;
 
   &__btn--new {
     align-self: start;
     grid-column: btn;
     grid-row: 2 / span 1;
+    margin: 0rem 2rem;
   }
 
   &__dice {
@@ -36,13 +36,13 @@
     grid-column: btn;
     grid-row: 4 / span 1;
     align-self: end;
-    margin-bottom: 1rem;
+    margin: 0rem 2rem 1rem;
   }
   &__btn--hold {
     grid-column: btn;
     grid-row: 5 / span 1;
     align-self: start;
-    margin-top: 1rem;
+    margin: 0rem 2rem 1rem;
   }
 
   &__player-1-bg {
@@ -88,11 +88,19 @@
     grid-row: 4 / span 2;
   }
 
-  @media (max-width: 1000px) {
-    padding: 4rem 1rem;
+  @include media(mobile-landscape) {
+    max-width: 95%;
+    padding: 2rem 0;
+    grid-template-rows: 0.6fr repeat(4, minmax(max-content, 0.6fr)) 0.2fr;
+  }
+
+  @include media(mobile) {
     grid-template-columns: 1rem repeat(3, minmax(min-content, 1fr)) 1rem;
-    grid-template-rows: 4rem repeat(7, minmax(max-content, 0.5fr)) 4rem;
-    // grid-template-rows: 0.5fr [player-1-start] 1fr [player-1-end] [player-2-start] 1fr [player-2-end] 0.5fr;
+    grid-template-rows:
+      min-content
+      var(--gutter-elem)
+      repeat(6, max-content)
+      var(--gutter-elem);
     grid-template-areas:
       ". btn1 btn1 btn1 ."
       ". . . . ."
@@ -109,7 +117,7 @@
     &__btn--new {
       align-self: center;
       grid-area: btn1;
-      margin-bottom: 4rem;
+      margin-bottom: 2rem;
     }
 
     &__dice {
@@ -134,15 +142,15 @@
       grid-row: 2 / 6;
       grid-column: 1 / -1;
       border-radius: 0;
-      border-top-left-radius: 40px;
-      border-top-right-radius: 40px;
+      border-top-left-radius: 20px;
+      border-top-right-radius: 20px;
     }
     &__player-2-bg {
       grid-row: 6 / -1;
       grid-column: 1 / -1;
       border-radius: 0;
-      border-bottom-left-radius: 40px;
-      border-bottom-right-radius: 40px;
+      border-bottom-left-radius: 20px;
+      border-bottom-right-radius: 20px;
     }
 
     &__player-1 {
@@ -155,121 +163,12 @@
 
     &__player-1-accumulated {
       grid-area: player-1-acc;
-      margin-bottom: 6rem;
+      margin: var(--gutter-elem) 0;
     }
 
     &__player-2-accumulated {
       grid-area: player-2-acc;
-      margin-top: 6rem;
+      margin: var(--gutter-elem) 0;
     }
-  }
-}
-
-// typography
-
-h2 {
-  font-size: 4rem;
-  font-weight: 500;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-}
-
-h3 {
-  font-size: 2rem;
-  font-weight: 400;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-}
-
-p {
-  font-size: 2rem;
-}
-
-img {
-  width: 100%;
-  display: inline-block;
-  object-fit: contain;
-}
-
-.player {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-
-  &__score {
-    font-size: 8rem;
-    color: rgba(187, 10, 99, 0.815);
-    margin-bottom: 0;
-    margin-top: 2rem;
-  }
-
-  @media (max-width: 1000px) {
-    padding: 2rem;
-
-    &__score {
-      margin: 0;
-      margin-top: 2rem;
-      line-height: 1;
-      display: flex;
-      align-items: center;
-    }
-
-    &--2 {
-      .player__score {
-        order: -1;
-        margin-bottom: 2rem;
-      }
-    }
-  }
-}
-
-.accumulated {
-  padding: 3rem 5rem;
-  background: rgba(223, 59, 141, 0.815);
-  color: white;
-  border-radius: 10px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-
-  &__current {
-    font-size: 2.5rem;
-    margin-bottom: 2rem;
-  }
-  &__score {
-    font-size: 3rem;
-  }
-
-  @media (max-width: 1000px) {
-    padding: 1.5rem 3rem;
-
-    &--2 {
-      .accumulated__current {
-        margin: 0;
-        margin-top: 2rem;
-        order: 2;
-      }
-    }
-  }
-}
-
-.btn {
-  padding: 1rem 3rem;
-  border-radius: 20px;
-  border: none;
-  font-size: 2rem;
-  color: rgba(51, 51, 51, 0.808);
-  text-transform: uppercase;
-  transition: all 0.2s;
-
-  &:hover {
-    cursor: pointer;
-    opacity: 0.9;
-    transform: scale(1.02);
-  }
-
-  &:active {
-    transform: scale(0.98);
   }
 }
